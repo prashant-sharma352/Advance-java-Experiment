@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ApexTech - Shopping Cart</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#2563eb",
+            "on-secondary": "#ffffff",
+            "on-background": "#131b2e",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-high": "#e2e7ff",
+            "secondary-container": "#4069f2",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-primary": "#b4c5ff",
+            "surface-container": "#eaedff",
+            "on-surface-variant": "#434655",
+            "outline": "#737686",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary-container": "#007f36",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#7ffc97",
+            "on-tertiary-fixed-variant": "#005320",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#00174b",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#62df7d",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "outline-variant": "#c3c6d7",
+            "background": "#faf8ff",
+            "on-tertiary-container": "#c7ffca",
+            "surface-container-highest": "#dae2fd",
+            "primary-fixed": "#dbe1ff",
+            "on-primary-container": "#eeefff",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed": "#001551",
+            "tertiary": "#006329",
+            "error": "#ba1a1a",
+            "surface": "#faf8ff",
+            "primary": "#004ac6",
+            "surface-tint": "#0053db",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-tertiary-fixed": "#002109",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed": "#dce1ff",
+            "surface-variant": "#dae2fd",
+            "on-surface": "#131b2e",
+            "primary-fixed-dim": "#b4c5ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "label-md": ["Inter"],
+            "title-md": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["Manrope"],
+            "label-mono": ["JetBrains Mono"],
+            "display-hero": ["Manrope"],
+            "headline-lg": ["Manrope"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest/90 backdrop-blur-md text-primary docked full-width top-0 sticky z-40 shadow-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin max-w-7xl mx-auto h-16">
+<div class="flex items-center gap-space-md">
+<button aria-label="Go Back" class="p-2 rounded-lg hover:bg-surface-container transition-colors duration-150 text-on-surface active:scale-95 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Shopping Cart</h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-semibold">2 Items</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<a class="hidden md:flex items-center gap-1 font-headline-md text-headline-md tracking-tight font-extrabold text-on-surface" href="#">
+          ApexTech
+        </a>
+<div class="flex items-center gap-1">
+<button aria-label="Saved Wishlist" class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="Support" class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-md md:py-space-xl pb-36 md:pb-space-xl">
+<!-- Free Shipping Progress Bay -->
+<div class="mb-space-lg bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-2.5">
+<div class="flex items-center gap-space-sm text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-tertiary" data-icon="local_shipping">local_shipping</span>
+<span>Add <span class="font-bold text-primary">₹1,001</span> more for <span class="font-semibold text-tertiary">Free Express Delivery</span></span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant font-medium">₹2,49,899 / ₹2,50,900</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container to-tertiary rounded-full transition-all duration-500 ease-out" style="width: 88%;"></div>
+</div>
+<div class="flex items-center justify-between mt-2 text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Express Dispatch Ready</span>
+<span>Eligible for priority logistics</span>
+</div>
+</div>
+<!-- Dual Column Shopping Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Items & Promo (8 Cols) -->
+<section class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Cart Items Box -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-md md:px-space-lg py-space-sm border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low/50">
+<span class="font-label-lg text-label-lg text-on-surface">Order Items (2)</span>
+<span class="font-label-mono text-label-mono text-tertiary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span> Price Protection Active
+            </span>
+</div>
+<!-- Item 1: Samsung Galaxy S25 Ultra -->
+<article class="p-space-md md:p-space-lg border-b border-outline-variant/20 flex flex-col sm:flex-row gap-space-md md:gap-space-lg items-start">
+<div class="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-lg bg-surface-container-low border border-outline-variant/30 overflow-hidden flex items-center justify-center p-2 relative">
+<img class="object-contain w-full h-full" data-alt="High-end titanium Samsung Galaxy S25 Ultra smartphone with quad-lens camera matrix displayed on a minimal slate podium with crisp directional lighting, studio tech commercial product photography, professional 8k clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBQLvwEGPesIyhY5IU3RFWFDWJ4wcXBKGvuktICNcSWLf0JOrrsyGhA64hYd0-fbcAZKOhvJ-EafnITOmR80-Vh0o2b4XauTLyXmg_dDwMG9l6Oh9qqlHDqBsWGXcU0EEUcdkNP3cXGCUSfKXrfceuTx_tg3w6fbtn3-MMiWG-oFIkKDNQ6ZzpOGFU-TOXuU-d5sFj2dGHlNFewJlDDotZxFLg9_S9DjqOVzBAJCyk-SJcf3EAHseWVw">
+<span class="absolute top-1 left-1 bg-tertiary text-on-tertiary px-1.5 py-0.5 rounded text-[10px] font-label-mono font-bold leading-none">7% OFF</span>
+</div>
+<div class="flex-1 min-w-0 w-full flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<span class="font-label-md text-label-md text-primary font-semibold">Smartphones</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Samsung Galaxy S25 Ultra</h2>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">₹1,24,999</div>
+<div class="font-label-md text-label-md line-through text-outline">₹1,34,000</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Phantom Titanium · 12GB RAM · 256GB Storage · AI Pro Vision
+                </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-label-md font-label-md">
+<span class="material-symbols-outlined text-tertiary text-[14px]" data-icon="check_circle">check_circle</span> In Stock
+                  </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Ships tomorrow</span>
+</div>
+</div>
+<!-- Controls & Actions -->
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Touch-friendly stepper -->
+<div class="inline-flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden shadow-xs">
+<button aria-label="Decrease quantity" class="w-9 h-9 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-label-mono text-label-mono text-on-surface font-bold select-none">1</span>
+<button aria-label="Increase quantity" class="w-9 h-9 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors rounded hover:bg-surface-container-low" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="bookmark_border">bookmark_border</span>
+                    Save for Later
+                  </button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 text-error hover:text-on-error hover:bg-error transition-colors rounded font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+                    Remove
+                  </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 2: Apple MacBook Air M3 15" -->
+<article class="p-space-md md:p-space-lg flex flex-col sm:flex-row gap-space-md md:gap-space-lg items-start">
+<div class="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-lg bg-surface-container-low border border-outline-variant/30 overflow-hidden flex items-center justify-center p-2 relative">
+<img class="object-contain w-full h-full" data-alt="Sleek Apple MacBook Air 15 inch in dark Midnight finish hovering open over a reflective slate platform, cinematic product photography with soft directional daylighting, ultra premium tech industrial render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHbTk8O3L22vuhshGjCvUk7ueiVGK0Rmw0eZ-S5T1b0KNYGjzzEaH4QZ4g84AQnYB6vPAYLCkoegAJTeqv3TsI9i8NRGgE4BHGafKldO6ipwuLqgDOFgUZY3cyC8i_rtCRZKpXbeK1vk40NqaLEXi1x5csazPkIkRatsdzdA9Mhs138Za682-HUUnqvpE2dDEu7Ul25kYm_ZaHw9e2Q6wzRDLaEZRjvPQK5S7pa61-LJ4xM5BEZzZ9tQ">
+</div>
+<div class="flex-1 min-w-0 w-full flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<span class="font-label-md text-label-md text-primary font-semibold">Laptops</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Apple MacBook Air M3 15"</h2>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">₹1,29,900</div>
+<div class="font-label-md text-label-md text-tertiary">MSRP Authorized</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Midnight · 16GB Unified RAM · 512GB SSD · Liquid Retina Display
+                </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-label-md font-label-md">
+<span class="material-symbols-outlined text-tertiary text-[14px]" data-icon="check_circle">check_circle</span> In Stock
+                  </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Includes Apple India Warranty</span>
+</div>
+</div>
+<!-- Controls & Actions -->
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Stepper -->
+<div class="inline-flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden shadow-xs">
+<button aria-label="Decrease quantity" class="w-9 h-9 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="w-10 text-center font-label-mono text-label-mono text-on-surface font-bold select-none">1</span>
+<button aria-label="Increase quantity" class="w-9 h-9 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors rounded hover:bg-surface-container-low" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="bookmark_border">bookmark_border</span>
+                    Save for Later
+                  </button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 text-error hover:text-on-error hover:bg-error transition-colors rounded font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+                    Remove
+                  </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Coupon / Promo Code Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sell">sell</span>
+              Offers &amp; Promo Coupons
+            </h3>
+<span class="font-label-mono text-label-mono text-primary cursor-pointer hover:underline">View All (4)</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-2">
+<div class="relative flex-1">
+<input class="w-full rounded-lg border border-outline-variant px-3.5 py-2.5 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none uppercase font-label-mono" placeholder="Enter discount or student promo code" type="text" value="">
+</div>
+<button class="px-5 py-2.5 bg-on-surface text-surface-container-lowest rounded-lg font-label-lg text-label-lg hover:bg-primary transition-colors active:scale-95 duration-150" type="button">
+              Apply
+            </button>
+</div>
+<!-- Applied coupon pill -->
+<div class="mt-3.5 flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high border border-primary/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-label-mono text-label-mono font-bold text-on-surface">TECHBONUS5K applied (-₹5,000)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Flagship Device Launch Bonus</p>
+</div>
+</div>
+<button class="font-label-md text-label-md text-error hover:underline px-2 py-1" type="button">
+              Remove
+            </button>
+</div>
+</div>
+<!-- Trust Badges Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm p-space-md bg-surface-container-low/70 border border-outline-variant/30 rounded-xl">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-tertiary" data-icon="published_with_changes">published_with_changes</span>
+<span>7-Day Replacement Guarantee</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<span>100% Genuine Tech Warranty</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-on-surface" data-icon="lock">lock</span>
+<span>Secure 256-Bit Checkout</span>
+</div>
+</div>
+</section>
+<!-- Right Column: Order Summary (4 Cols) -->
+<aside class="lg:col-span-4 sticky top-24 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-md md:p-space-lg shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface pb-3 border-b border-outline-variant/30 mb-space-md">
+            Order Summary
+          </h2>
+<div class="space-y-3 font-body-md text-body-md">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Items Total (2)</span>
+<span class="font-label-mono text-label-mono font-semibold text-on-surface">₹2,54,899</span>
+</div>
+<div class="flex justify-between items-center text-tertiary">
+<span class="flex items-center gap-1">
+                Instant Tech Discount
+                <span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+</span>
+<span class="font-label-mono text-label-mono font-bold">-₹5,000</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="flex items-center gap-1">
+                Delivery (Express Courier)
+              </span>
+<span class="font-label-mono text-label-mono text-tertiary font-bold">FREE</span>
+</div>
+<div class="flex justify-between items-center text-outline text-body-sm font-body-sm">
+<span>Estimated GST (18% included)</span>
+<span class="font-label-mono text-label-mono">₹38,089</span>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex justify-between items-baseline">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Total Payable</span>
+<p class="font-body-sm text-body-sm text-tertiary">You save ₹14,101 on this order</p>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary font-label-mono">₹2,49,899</span>
+</div>
+</div>
+<div class="mt-space-lg hidden md:block">
+<button class="w-full min-h-[48px] py-3.5 px-space-md bg-primary hover:bg-secondary text-on-primary rounded-lg font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span>Proceed to Checkout</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center font-label-md text-label-md text-on-surface-variant mt-2.5 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="shield">shield</span>
+              ApexTech Encrypted Buyer Protection
+            </p>
+</div>
+</div>
+<!-- Payment Methods Preview -->
+<div class="bg-surface-container-low/50 border border-outline-variant/30 rounded-xl p-space-md text-center">
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Supported Payment Options</p>
+<div class="flex items-center justify-center gap-3 text-on-surface-variant font-label-mono text-label-mono">
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/40 rounded">UPI</span>
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/40 rounded">Credit Card</span>
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/40 rounded">EMI (0%)</span>
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/40 rounded">NetBanking</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Sticky Bottom Dock for Mobile Checkout (md:hidden) -->
+<div class="md:hidden fixed bottom-14 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-margin-mobile py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] border-t border-outline-variant/40">
+<div class="flex items-center justify-between gap-space-md max-w-7xl mx-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant leading-none">Total Payable</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹2,49,899</span>
+</div>
+<button class="font-label-mono text-[11px] text-primary text-left flex items-center gap-0.5" type="button">
+          View details <span class="material-symbols-outlined text-[12px]" data-icon="expand_less">expand_less</span>
+</button>
+</div>
+<button class="min-h-[48px] px-6 py-2.5 bg-primary hover:bg-secondary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all" type="button">
+<span>Proceed to Checkout</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar (Mobile Docked Shell) -->
+<nav class="bg-surface-container-lowest/95 backdrop-blur-md text-primary docked full-width bottom-0 md:hidden border-t border-outline-variant/40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] fixed w-full z-50 flex justify-around items-center px-space-sm py-space-xs">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md mt-0.5">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+<span class="font-label-md text-label-md mt-0.5">Compare</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="sell">sell</span>
+<span class="font-label-md text-label-md mt-0.5">Deals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+<span class="font-label-md text-label-md mt-0.5">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span>
+<span class="font-label-md text-label-md mt-0.5">Account</span>
+</a>
+</nav>
+<!-- Footer Component (Desktop / Tablet) -->
+<footer class="bg-surface-container-low w-full border-t border-outline-variant/30 mt-auto hidden md:block">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col md:flex-row justify-between items-center gap-space-lg">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface">ApexTech</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">
+          © 2024 ApexTech Ltd. All rights reserved. High-performance device evaluations and marketplace metrics.
+        </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-space-lg gap-y-2">
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Smartphones</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Laptops</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Comparisons</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Price Tracker</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Editorial Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Privacy Terms</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors duration-150" href="#">Support</a>
+</nav>
+</div>
+</footer>
+</body></html>

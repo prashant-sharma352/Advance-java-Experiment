@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ApexTech - My Tech Wishlist &amp; Saved Specs</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Fonts: Inter, Manrope, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f2f3ff",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary": "#ffffff",
+            "primary": "#004ac6",
+            "on-secondary-fixed": "#001551",
+            "surface-tint": "#0053db",
+            "surface-variant": "#dae2fd",
+            "tertiary-container": "#007f36",
+            "tertiary-fixed-dim": "#62df7d",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#00174b",
+            "on-secondary-container": "#fffbff",
+            "inverse-surface": "#283044",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed": "#002109",
+            "on-secondary-fixed-variant": "#0039b5",
+            "background": "#faf8ff",
+            "on-surface": "#131b2e",
+            "surface-container-highest": "#dae2fd",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed": "#dbe1ff",
+            "on-tertiary-container": "#c7ffca",
+            "surface-container": "#eaedff",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-primary-container": "#eeefff",
+            "secondary-container": "#4069f2",
+            "secondary-fixed-dim": "#b7c4ff",
+            "outline-variant": "#c3c6d7",
+            "outline": "#737686",
+            "on-surface-variant": "#434655",
+            "primary-fixed-dim": "#b4c5ff",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#006329",
+            "surface-container-high": "#e2e7ff",
+            "inverse-primary": "#b4c5ff",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#005320",
+            "inverse-on-surface": "#eef0ff",
+            "on-background": "#131b2e",
+            "primary-container": "#2563eb",
+            "secondary": "#1d4ed8",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#7ffc97"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-lg-mobile": ["Manrope"],
+            "label-lg": ["Inter"],
+            "headline-md": ["Manrope"],
+            "title-md": ["Manrope"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "display-hero": ["Manrope"],
+            "label-mono": ["JetBrains Mono"],
+            "display-hero-mobile": ["Manrope"],
+            "headline-lg": ["Manrope"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-24 selection:bg-surface-container-high selection:text-primary">
+<!-- Mobile Container Wrapper with max-w-md constraint to simulate pristine smartphone viewport -->
+<div class="max-w-md mx-auto min-h-screen bg-background flex flex-col relative shadow-2xl">
+<!-- Header: Sticky Top Bar with Glassmorphism -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-margin-mobile py-space-sm border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Go back" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md tracking-tight font-extrabold text-on-surface">ApexTech</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Share wishlist" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="Shopping Cart" class="relative w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute top-1 right-1 w-4 h-4 bg-primary text-on-primary font-label-md text-[10px] leading-tight rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="px-margin-mobile pt-space-md pb-space-lg flex-1 flex flex-col gap-space-md">
+<!-- Top Section: Title & Item Counter -->
+<section class="flex items-baseline justify-between pt-space-xs">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">My Wishlist</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Track real-time market dips &amp; tech specs</p>
+</div>
+<span class="font-label-md text-label-md bg-surface-container text-primary font-semibold px-2.5 py-1 rounded-full border border-outline-variant/30">
+          5 Items Saved
+        </span>
+</section>
+<!-- Quick Filter Chips (Horizontal Scrollable) -->
+<section class="overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile flex items-center gap-2 py-1">
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary-container text-on-primary transition-all shadow-sm">
+          All Saved
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:border-primary-container transition-all flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          Price Dropped (2)
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:border-primary-container transition-all">
+          In Stock
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:border-primary-container transition-all">
+          Laptops
+        </button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:border-primary-container transition-all">
+          Smartphones
+        </button>
+</section>
+<!-- Notification Alert Card -->
+<section class="bg-surface-container-low border border-primary-fixed rounded-xl p-space-sm shadow-sm flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Price Drop Alert</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+            2 saved items dropped in price this week! Total potential savings: <span class="font-semibold text-tertiary">₹11,200</span>.
+          </p>
+</div>
+</section>
+<!-- Wishlist Item Cards Container -->
+<section class="flex flex-col gap-space-md">
+<!-- CARD 1: Samsung Galaxy S25 Ultra -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md shadow-sm relative overflow-hidden transition-all duration-200 hover:shadow-md">
+<!-- Discount Pill Badge Top -->
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md bg-tertiary-container/10 text-tertiary font-bold px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+              Price dropped by ₹8,000
+            </span>
+<button aria-label="Remove Samsung Galaxy S25 Ultra" class="text-on-surface-variant hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<div class="flex gap-space-md">
+<!-- Product Thumbnail Aspect Box -->
+<div class="w-24 h-28 bg-surface-container-low rounded-lg shrink-0 overflow-hidden flex items-center justify-center border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Studio product photograph of the Samsung Galaxy S25 Ultra in Phantom Titanium finish, standing against a high-key minimal tech laboratory background with cool daylight illumination. Crisp reflections glinting off the titanium edge, showcasing high precision industrial manufacturing and professional consumer technology standards in pristine light tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHFktRKMe5JuJC6DUBJbuQu19RJHcAOtKckblgzqADFxYZjZqKSY4HiW8RZUk7iApd0CeN5CbfL9T7FCLul9Shd2gaw_WG1mKuOmGY3FwZXv0CdIlrrS-b1_p_UBseLyLRd33sIGuyZa_XPSrTiJQe12DdJ5ZYxUHF54Awyk8uMBmQrZ9ZX62_oreXhwrYw16kUlQ5bBmA5SuWPxE3BMv1_hAXPE4VekqtlxhgVWX4KiegbGxIdmt2Vg">
+</div>
+<!-- Specs & Info -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-[11px] text-on-surface-variant uppercase tracking-wider block">Smartphone • 256GB</span>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight font-bold">
+                  Samsung Galaxy S25 Ultra
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Phantom Titanium</p>
+</div>
+<!-- Rating Row -->
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">(2,410 reviews)</span>
+</div>
+<!-- Price Row -->
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹1,24,999</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">₹1,32,999</span>
+</div>
+</div>
+</div>
+<!-- Stock Indicator -->
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-md text-[11px] text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-semibold">In Stock - Express Delivery</span>
+</div>
+<a class="font-label-md text-label-md text-primary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[14px]">compare_arrows</span>
+              Compare
+            </a>
+</div>
+<!-- Action Buttons -->
+<div class="mt-3 flex gap-2">
+<button class="flex-1 bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg py-2.5 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              Move to Cart
+            </button>
+</div>
+</article>
+<!-- CARD 2: Apple MacBook Air M3 15" -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md shadow-sm relative overflow-hidden transition-all duration-200 hover:shadow-md">
+<!-- Lowest Price Badge Top -->
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md bg-secondary-fixed text-on-secondary-fixed font-bold px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              Lowest Price in 30 Days
+            </span>
+<button aria-label="Remove Apple MacBook Air M3" class="text-on-surface-variant hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<div class="flex gap-space-md">
+<!-- Product Thumbnail Aspect Box -->
+<div class="w-24 h-28 bg-surface-container-low rounded-lg shrink-0 overflow-hidden flex items-center justify-center border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Minimalist commercial studio shot of the open Apple MacBook Air 15-inch M3 in rich dark Midnight tone, resting on an immaculate white reflective surface. Bright, diffused neutral studio illumination highlights its ultra-thin unibody chassis, razor-thin bezels, and crisp keyboard layout with subtle blue undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe6sAF2GKxzpl6NL-OVaD9_JbuY2otRGpH1VyV1W8HxK63Fty93vrkQHUrLIYrKGuG8eybL8baMiLoI6HpZrGfUCq_cJ6nypzfAwujA6HDkfq9UTgopmBvoA2qegZRHzF2l3f-vysUcg_PaabQOmJyRyMEAkFvinBvl9tAPtGuymCXwgOafDehjibsGsnHUUs9ghYsZdgJx22VkJBwcr5p5ZexK_bI5TJSSaWGp23pLHm-9oEXOZNqSA">
+</div>
+<!-- Specs & Info -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-[11px] text-on-surface-variant uppercase tracking-wider block">Laptop • M3 Chip</span>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight font-bold">
+                  Apple MacBook Air M3 15"
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Midnight, 16GB / 512GB</p>
+</div>
+<!-- Rating Row -->
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">(980 reviews)</span>
+</div>
+<!-- Price Row -->
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹1,29,900</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">MSRP ₹1,34,000</span>
+</div>
+</div>
+</div>
+<!-- Stock Indicator -->
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-md text-[11px] text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-semibold">In Stock</span>
+</div>
+<a class="font-label-md text-label-md text-primary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[14px]">compare_arrows</span>
+              Compare
+            </a>
+</div>
+<!-- Action Buttons -->
+<div class="mt-3 flex gap-2">
+<button class="flex-1 bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg py-2.5 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              Move to Cart
+            </button>
+</div>
+</article>
+<!-- CARD 3: ASUS ROG Zephyrus G16 (Out of Stock) -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md shadow-sm relative overflow-hidden transition-all duration-200">
+<!-- Out of Stock Badge -->
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md bg-error-container text-on-error-container font-bold px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">error_outline</span>
+              Out of Stock - Notify Me
+            </span>
+<button aria-label="Remove ASUS ROG Zephyrus G16" class="text-on-surface-variant hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<div class="flex gap-space-md opacity-85">
+<!-- Product Thumbnail Aspect Box -->
+<div class="w-24 h-28 bg-surface-container-low rounded-lg shrink-0 overflow-hidden flex items-center justify-center border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="High-end sleek gaming laptop ASUS ROG Zephyrus G16 positioned on a light gray minimalist desk setup with ambient cyan and electric blue soft studio rim lighting. Clean top-angle product photography highlighting CNC-milled aluminum chassis and modern stealth aesthetic with razor sharp lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_2BHnSH6fM0TVdzIWh23p7J7fd8a64MEZhzAy5px7-LXTdWe7dwUlAi3QAy5EmrFrcdw0kh9PMoEn-YQ6EWQfE8uEj5BZKARmG3fa6vGZZZFvfVACL0ehDOzimfK_MyN--2PxxbInhmhP9xT3cj4un9WhLhvKVaPC2uPsc5vQhMo3folFgXbr_SufHwxujkfweXtiBLQiicFtHbnZ98EFgWUmd85PcoX-eIjXstt-yKLSflLeUNDaA">
+</div>
+<!-- Specs & Info -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-[11px] text-on-surface-variant uppercase tracking-wider block">Gaming • RTX 4070</span>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight font-bold">
+                  ASUS ROG Zephyrus G16
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Intel Core Ultra 9</p>
+</div>
+<!-- Rating Row -->
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.7</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">(412 reviews)</span>
+</div>
+<!-- Price Row -->
+<div class="mt-2 flex items-baseline">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹1,69,990</span>
+</div>
+</div>
+</div>
+<!-- Stock Indicator -->
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-md text-[11px] text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Replenishing inventory expected in 4 days</span>
+</div>
+<a class="font-label-md text-label-md text-primary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[14px]">compare_arrows</span>
+              Compare
+            </a>
+</div>
+<!-- Action Buttons -->
+<div class="mt-3">
+<button class="w-full bg-transparent border-2 border-primary text-primary hover:bg-primary/5 font-label-lg text-label-lg py-2 px-4 rounded-lg font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+              Notify When Available
+            </button>
+</div>
+</article>
+</section>
+<!-- Bottom Quick Specs Info Card -->
+<section class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 text-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">balance</span>
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Need help choosing?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-3">Compare battery health, benchmark scores, and thermal efficiency across all your saved devices side-by-side.</p>
+<button class="w-full bg-inverse-surface text-on-tertiary font-label-lg text-label-lg py-2 rounded-lg font-semibold hover:bg-inverse-surface/90 transition-colors">
+          Compare All 5 Items
+        </button>
+</section>
+</main>
+<!-- BottomNavBar: Executing JSON style and destination requirements exactly -->
+<!-- Destination 4: "Wishlist" is ACTIVE (highlighted in #2563EB / primary with dot) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] border-t border-outline-variant/40 max-w-md mx-auto inset-x-0">
+<!-- Tab 1: Explore -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90 py-1 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="font-label-md text-label-md mt-0.5">Explore</span>
+</a>
+<!-- Tab 2: Compare -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90 py-1 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">compare_arrows</span>
+<span class="font-label-md text-label-md mt-0.5">Compare</span>
+</a>
+<!-- Tab 3: Deals -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90 py-1 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">sell</span>
+<span class="font-label-md text-label-md mt-0.5">Deals</span>
+</a>
+<!-- Tab 4: Wishlist (ACTIVE STATE LOCK) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-semibold py-1 px-2 relative active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-md text-label-md mt-0.5 text-primary">Wishlist</span>
+<!-- Active indicator dot -->
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-0.5 absolute -bottom-1"></span>
+</a>
+<!-- Tab 5: Account -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-90 py-1 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">person_outline</span>
+<span class="font-label-md text-label-md mt-0.5">Account</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ApexTech Secure Checkout - Payment</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#2563eb",
+            "on-secondary": "#ffffff",
+            "on-background": "#131b2e",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-high": "#e2e7ff",
+            "secondary-container": "#4069f2",
+            "secondary-fixed-dim": "#b7c4ff",
+            "inverse-primary": "#b4c5ff",
+            "surface-container": "#eaedff",
+            "on-surface-variant": "#434655",
+            "outline": "#737686",
+            "on-secondary-fixed-variant": "#0039b5",
+            "tertiary-container": "#007f36",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#7ffc97",
+            "on-tertiary-fixed-variant": "#005320",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#00174b",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#62df7d",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "outline-variant": "#c3c6d7",
+            "background": "#faf8ff",
+            "on-tertiary-container": "#c7ffca",
+            "surface-container-highest": "#dae2fd",
+            "primary-fixed": "#dbe1ff",
+            "on-primary-container": "#eeefff",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed": "#001551",
+            "tertiary": "#006329",
+            "error": "#ba1a1a",
+            "surface": "#faf8ff",
+            "primary": "#004ac6",
+            "surface-tint": "#0053db",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-tertiary-fixed": "#002109",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed": "#dce1ff",
+            "surface-variant": "#dae2fd",
+            "on-surface": "#131b2e",
+            "primary-fixed-dim": "#b4c5ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "label-md": ["Inter"],
+            "title-md": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["Manrope"],
+            "label-mono": ["JetBrains Mono"],
+            "display-hero": ["Manrope"],
+            "headline-lg": ["Manrope"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed pb-32 md:pb-16">
+<!-- Transactional Focused Header: Navigation shell suppressed as per Destination Rule for checkout journey -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md shadow-sm border-b border-outline-variant/40">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin h-16 md:h-20 flex items-center justify-between">
+<!-- Brand & Security Identifier -->
+<div class="flex items-center gap-space-sm">
+<a class="font-headline-md text-headline-md tracking-tight font-extrabold text-on-surface flex items-center gap-1" href="#">
+<span>ApexTech</span>
+</a>
+<div class="h-5 w-px bg-outline-variant/60 mx-1 hidden sm:block"></div>
+<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Secure Checkout</span>
+</div>
+</div>
+<!-- Multi-step Indicator -->
+<nav aria-label="Checkout Progress" class="flex items-center gap-2 sm:gap-3 md:gap-5">
+<!-- Step 1: Address (Completed) -->
+<div class="flex items-center gap-1.5 text-tertiary">
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-md text-label-md hidden md:inline">Address</span>
+</div>
+<div class="w-6 sm:w-10 h-0.5 bg-tertiary"></div>
+<!-- Step 2: Payment (Active) -->
+<div class="flex items-center gap-1.5 text-primary">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md ring-4 ring-primary-fixed">
+<span>2</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Payment</span>
+</div>
+<div class="w-6 sm:w-10 h-0.5 bg-outline-variant/50"></div>
+<!-- Step 3: Review -->
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md">
+<span>3</span>
+</div>
+<span class="font-label-md text-label-md hidden md:inline">Review</span>
+</div>
+</nav>
+<!-- Trust Seal Minimal -->
+<div class="hidden lg:flex items-center gap-1 text-on-surface-variant font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[18px] text-tertiary">verified_user</span>
+<span>256-BIT ENCRYPTION</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-margin-mobile md:px-margin py-space-md md:py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg md:gap-space-xl items-start">
+<!-- Left Column: Checkout Operations (8 Cols) -->
+<div class="lg:col-span-7 xl:col-span-8 space-y-space-md md:space-y-space-lg">
+<!-- Selected Delivery Address Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-md md:p-space-lg shadow-sm">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="flex items-center gap-2">
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Delivering to Rohit Rajput</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-mono text-label-mono uppercase tracking-wide">HOME</span>
+</div>
+</div>
+<button class="text-primary hover:text-secondary font-label-lg text-label-lg transition-colors duration-150 inline-flex items-center gap-1 focus:outline-none" type="button">
+<span>Change Address</span>
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div class="ml-0 sm:ml-7 text-on-surface-variant font-body-md text-body-md space-y-1">
+<p class="leading-relaxed text-on-surface">Flat 402, HighTech Heights, Cyber City, Bengaluru, Karnataka 560100</p>
+<p class="flex items-center gap-1.5 text-on-surface-variant font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[15px]">call</span>
+<span>+91 98765 43210</span>
+</p>
+</div>
+</section>
+<!-- Payment Selection Accordions -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between pb-1">
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Choose Payment Method</h1>
+<span class="font-label-md text-label-md text-tertiary flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-[14px]">bolt</span> 100% Instant Confirmation
+            </span>
+</div>
+<!-- Method 1: UPI (Expanded by Default) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary overflow-hidden shadow-sm transition-all duration-200">
+<div class="p-space-md md:p-space-lg bg-surface-container-low/40 flex items-center justify-between cursor-pointer border-b border-outline-variant/30">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center bg-surface-container-lowest">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">UPI</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-mono text-[11px] font-bold">INSTANT &amp; NO CHARGES</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pay directly via your bank apps</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance_wallet</span>
+</div>
+<div class="p-space-md md:p-space-lg space-y-space-lg">
+<!-- 1-Tap Fast App Selector -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-space-sm">Select Fast UPI App</label>
+<div class="grid grid-cols-3 gap-space-sm">
+<!-- Google Pay -->
+<button class="group relative flex flex-col items-center justify-center p-3 rounded-lg border-2 border-primary bg-primary-fixed/20 hover:border-primary transition-all duration-150" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm mb-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Google Pay</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span>
+</button>
+<!-- PhonePe -->
+<button class="group flex flex-col items-center justify-center p-3 rounded-lg border border-outline-variant/60 bg-surface-container-lowest hover:border-outline transition-all duration-150" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center shadow-sm mb-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">payments</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-on-surface">PhonePe</span>
+</button>
+<!-- Paytm -->
+<button class="group flex flex-col items-center justify-center p-3 rounded-lg border border-outline-variant/60 bg-surface-container-lowest hover:border-outline transition-all duration-150" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center shadow-sm mb-1.5">
+<span class="material-symbols-outlined text-on-surface text-[20px]">contactless</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-on-surface">Paytm</span>
+</button>
+</div>
+</div>
+<!-- OR Divider -->
+<div class="relative flex items-center">
+<div class="flex-grow border-t border-outline-variant/40"></div>
+<span class="flex-shrink mx-4 font-label-mono text-label-mono text-outline">OR ENTER UPI ID</span>
+<div class="flex-grow border-t border-outline-variant/40"></div>
+</div>
+<!-- UPI ID Verification Box -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="upi-id">Enter Virtual Payment Address (VPA)</label>
+<div class="flex gap-2">
+<div class="relative flex-grow">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 font-label-mono text-label-mono text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="upi-id" placeholder="username@bank" type="text" value="rohit@okhdfcbank">
+<span class="material-symbols-outlined text-tertiary absolute right-3 top-2.5 text-[20px]">check_circle</span>
+</div>
+<button class="bg-surface-container-high hover:bg-surface-container text-primary font-label-lg text-label-lg px-space-md rounded-lg transition-colors" type="button">
+                    Verified
+                  </button>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                  Verified: Rohit Rajput (HDFC Bank)
+                </p>
+</div>
+</div>
+</div>
+<!-- Method 2: Credit / Debit Cards -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 overflow-hidden shadow-sm hover:border-outline transition-all duration-200">
+<div class="p-space-md md:p-space-lg flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center bg-surface-container-lowest"></div>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-bold">Credit / Debit Cards</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visa, Mastercard, RuPay, Amex</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Card Form Content -->
+<div class="px-space-md md:px-space-lg pb-space-lg pt-space-xs space-y-space-md border-t border-outline-variant/30">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Card Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 font-label-mono text-label-mono text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="4532 •••• •••• 8921" type="text">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant text-[20px]">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Expiry Date</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 font-label-mono text-label-mono text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="MM / YY" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1 flex items-center justify-between">
+<span>CVV</span>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="3-digit security code on the back">help</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 font-label-mono text-label-mono text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" maxlength="4" placeholder="•••" type="password">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Cardholder Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Rohit Rajput" type="text">
+</div>
+<div class="flex items-start gap-2 pt-1">
+<input checked="" class="mt-1 rounded border-outline-variant text-primary focus:ring-primary" id="save-card" type="checkbox">
+<label class="font-body-sm text-body-sm text-on-surface-variant leading-tight" for="save-card">
+<span class="text-on-surface font-semibold">Save this card securely</span> as per RBI tokenization guidelines. ApexTech does not store sensitive CVV codes.
+                </label>
+</div>
+</div>
+</div>
+<!-- Method 3: Net Banking -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-md md:p-space-lg flex items-center justify-between cursor-pointer hover:border-outline transition-all duration-200 shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center bg-surface-container-lowest"></div>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-bold">Net Banking</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All major Indian &amp; international banks supported</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Method 4: Easy EMI Options -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-md md:p-space-lg flex items-center justify-between cursor-pointer hover:border-outline transition-all duration-200 shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center bg-surface-container-lowest"></div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">Easy EMI Options</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-mono text-[11px] font-semibold">LOW INTEREST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Starting from ₹11,250/mo on credit card</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Method 5: Cash / Card on Delivery -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-md md:p-space-lg flex items-center justify-between cursor-pointer hover:border-outline transition-all duration-200 shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center bg-surface-container-lowest"></div>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-bold">Cash / Card on Delivery</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Requires security verification PIN upon courier arrival</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Trust & Security Banner -->
+<div class="bg-surface-container-low/60 rounded-xl border border-outline-variant/30 p-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<span>256-Bit Bank Grade Encryption</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-tertiary text-[20px]">verified</span>
+<span>PCI-DSS Level 1 Certified</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[20px]">security</span>
+<span>ApexTech Zero Fraud Liability</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary & Review Box (4 Cols / 5 Cols on XL) -->
+<aside class="lg:col-span-5 xl:col-span-4 space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-sm p-space-md md:p-space-lg">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Order Summary</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-mono text-label-mono font-bold">2 ITEMS</span>
+</div>
+<!-- Items Breakdown -->
+<div class="py-space-md space-y-space-md border-b border-outline-variant/30">
+<!-- Item 1: Galaxy S25 Ultra -->
+<div class="flex gap-space-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low border border-outline-variant/40 flex-shrink-0 flex items-center justify-center p-1.5 overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Close up studio product render of Samsung Galaxy S25 Ultra titanium smartphone, sleek dark slate chassis with refined symmetrical camera rings, resting against a clean neutral light grey background with sharp metallic highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOpmxCDAFT-PqkObTcqxYRjPPYSXuQ-PtHwq1wBrYalYqtGqG5Xrefb1RbbmH1d7o_zF_Ja7uaMFYoQA8UkRI3L3LT4vwkEomJaGKzpoYzikaU_RRcJL3anxfswk49bzs0aMhnXbi9xQyIBKkRtYrRKhOMtXELP5ussaLAl3xyifOm1aayMy6-b_LsLkKiyNHZIVVNioLMrrZBjY2RZh2Q5kAIUZa2LlSqA-XDOV0S5-4oUsutdFawmg">
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start gap-1">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate">Galaxy S25 Ultra</h3>
+<span class="font-label-mono text-label-mono font-bold text-on-surface">₹1,34,900</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Titanium Black · 512GB</p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-mono text-[11px] text-tertiary bg-tertiary-fixed/30 px-1.5 py-0.5 rounded">In Stock · Express Dispatch</span>
+<span class="font-label-mono text-label-mono text-outline">Qty: 1</span>
+</div>
+</div>
+</div>
+<!-- Item 2: MacBook Air M3 -->
+<div class="flex gap-space-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low border border-outline-variant/40 flex-shrink-0 flex items-center justify-center p-1.5 overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Premium minimal studio photography of an open Apple MacBook Air M3 laptop in midnight finish, highlighting the ultra thin profile and vibrant display with realistic high-contrast studio softbox illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMW6W2rzwBq8d2tBHfT7_FzxLtb4FMrJeXqq0-LjVMH-zwTMCpUQ-zhA6sHjjwTqQEjx1WXoPY1Z19vjOM49fuKJEVBMuh0cvnJk7cjtC5qapVQDCpLsICGkA1W7csWaOTr5yLJMz3QnrJxWz5V3Kxf6dROojYJfqjNA2gnQ2d3X5kwIJuqMCkz6g1lctXe0zUeAbAwVidz0B_Hk3Mct2LhVlUkDKILf3Eq0eCSd5vYs_T9pWILSJlJA">
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start gap-1">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate">MacBook Air M3</h3>
+<span class="font-label-mono text-label-mono font-bold text-on-surface">₹1,14,999</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Midnight · 16GB · 512GB</p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-mono text-[11px] text-tertiary bg-tertiary-fixed/30 px-1.5 py-0.5 rounded">In Stock · Express Dispatch</span>
+<span class="font-label-mono text-label-mono text-outline">Qty: 1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Calculations -->
+<div class="py-space-md space-y-2.5 font-body-md text-body-md border-b border-outline-variant/30">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal (MRP incl. taxes)</span>
+<span class="font-label-mono text-label-mono text-on-surface">₹2,69,899</span>
+</div>
+<div class="flex justify-between text-tertiary font-medium">
+<span class="flex items-center gap-1">
+<span>ApexTech Privilege Discount</span>
+<span class="material-symbols-outlined text-[16px]">sell</span>
+</span>
+<span class="font-label-mono text-label-mono">-₹20,000</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Secured Express Delivery</span>
+<span class="font-label-mono text-label-mono text-tertiary uppercase font-bold">FREE</span>
+</div>
+</div>
+<!-- Grand Total -->
+<div class="pt-space-md pb-space-sm flex justify-between items-baseline">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block font-bold">Total Payable</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Inclusive of all GST &amp; duties</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg font-extrabold text-primary tracking-tight">₹2,49,899</span>
+</div>
+</div>
+<!-- Desktop Direct Trigger -->
+<div class="hidden md:block pt-space-sm">
+<button class="w-full bg-primary hover:bg-secondary text-on-primary py-3.5 px-space-md rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Pay ₹2,49,899 Securely</span>
+</button>
+<p class="font-label-mono text-[11px] text-center text-outline mt-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary">bolt</span> Instant UPI authentication token requested
+            </p>
+</div>
+</div>
+<!-- Warranty & Support Guarantee -->
+<div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">
+<p class="font-semibold text-on-surface">1-Year Official Brand Warranty</p>
+<p>Full transit insurance included for electronics.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Sticky Bottom Payment Action Dock (Mobile & Tablet) -->
+<div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant/40 shadow-[0_-4px_12px_rgba(0,0,0,0.06)] px-margin-mobile py-2.5">
+<div class="max-w-md mx-auto flex items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant leading-none">Total Payable</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary leading-tight">₹2,49,899</span>
+</div>
+<button class="flex-grow max-w-[240px] bg-primary hover:bg-secondary text-on-primary py-3 px-space-md rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Pay Securely</span>
+</button>
+</div>
+</div>
+<!-- Mandatory Footer Component execution (Immutable Casing preserved) -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant/30 mt-auto">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col md:flex-row justify-between items-center gap-space-lg text-center md:text-left">
+<div class="space-y-1">
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface">ApexTech</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          © 2024 ApexTech Ltd. All rights reserved. High-performance device evaluations and marketplace metrics.
+        </p>
+</div>
+<nav aria-label="Footer Navigation" class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors duration-150" href="#">Smartphones</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Laptops</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Comparisons</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Price Tracker</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Editorial Policy</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Privacy Terms</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Support</a>
+</nav>
+</div>
+</footer>
+</body></html>

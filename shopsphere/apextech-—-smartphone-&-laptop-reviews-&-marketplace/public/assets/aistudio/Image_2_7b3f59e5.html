@@ -1,0 +1,988 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ApexTech — Smartphone &amp; Laptop Reviews &amp; Marketplace</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Brand Google Fonts: Manrope & Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration according to design system -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#00174b",
+            "secondary-fixed": "#dce1ff",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-container": "#c7ffca",
+            "secondary": "#1d4ed8",
+            "on-secondary-fixed": "#001551",
+            "secondary-container": "#4069f2",
+            "secondary-fixed-dim": "#b7c4ff",
+            "on-error-container": "#93000a",
+            "outline": "#737686",
+            "on-tertiary-fixed": "#002109",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "surface-tint": "#0053db",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#283044",
+            "tertiary-fixed": "#7ffc97",
+            "surface-bright": "#faf8ff",
+            "on-surface": "#131b2e",
+            "on-secondary-container": "#fffbff",
+            "surface": "#faf8ff",
+            "primary-fixed": "#dbe1ff",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed-dim": "#62df7d",
+            "on-primary": "#ffffff",
+            "background": "#faf8ff",
+            "primary": "#004ac6",
+            "primary-container": "#2563eb",
+            "surface-container": "#eaedff",
+            "tertiary-container": "#007f36",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#005320",
+            "on-background": "#131b2e",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#0039b5",
+            "surface-variant": "#dae2fd",
+            "tertiary": "#006329",
+            "outline-variant": "#c3c6d7",
+            "on-surface-variant": "#434655",
+            "on-primary-fixed-variant": "#003ea8",
+            "surface-dim": "#d2d9f4",
+            "inverse-primary": "#b4c5ff",
+            "surface-container-high": "#e2e7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-mono": ["JetBrains Mono"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-lg-mobile": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "label-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "display-hero": ["Manrope"],
+            "body-sm": ["Inter"],
+            "title-md": ["Manrope"],
+            "label-md": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased pb-24 md:pb-0">
+<!-- ==================== 1. NOTIFICATION STRIP & STICKY APP BAR ==================== -->
+<div class="bg-primary text-on-primary text-center px-3 py-1.5 font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm">
+<span class="inline-block animate-pulse">🔥</span>
+<span>Today's Tech Deals: Up to 35% off flagship phones &amp; M3 laptops</span>
+<span class="hidden sm:inline font-bold underline cursor-pointer ml-1 hover:text-surface-container">Claim Deal</span>
+</div>
+<!-- Shared Component Anchor: TopAppBar -->
+<header class="bg-surface-container-lowest/90 backdrop-blur-md text-primary font-headline-sm text-headline-sm docked full-width top-0 sticky z-40 shadow-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin max-w-7xl mx-auto py-2.5 gap-2">
+<!-- Leading Menu Icon & Brand Identity -->
+<div class="flex items-center gap-2.5">
+<button aria-label="Toggle Navigation Drawer" class="p-1 rounded-lg text-on-surface hover:bg-surface-container active:scale-95 transition-transform" id="drawerToggleBtn">
+<span class="material-symbols-outlined text-[26px]">menu</span>
+</button>
+<a class="flex items-center gap-1.5 group" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-headline-md text-headline-md tracking-tight font-extrabold text-on-surface">ApexTech</span>
+</a>
+</div>
+<!-- Center Nav Links on Desktop -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-title-md text-title-md font-semibold" href="#">Explore</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-primary transition-colors" href="#">Smartphones</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-primary transition-colors" href="#">Laptops</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-primary transition-colors" href="#">Compare</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-primary transition-colors" href="#">Reviews</a>
+</nav>
+<!-- Action Cluster: Wishlist with Badge, User Avatar -->
+<div class="flex items-center gap-2">
+<button aria-label="Wishlist" class="relative p-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<span class="absolute 0 top-0.5 right-0.5 bg-primary-container text-on-primary text-[10px] font-bold px-1.5 py-0.2 rounded-full leading-tight shadow-sm">3</span>
+</button>
+<button aria-label="User Account" class="w-8 h-8 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center text-on-surface hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+</div>
+</div>
+<!-- Mobile Interactive Quick Search Bar embedded directly below Header bar -->
+<div class="px-margin-mobile md:px-margin max-w-7xl mx-auto pb-2.5 pt-0.5">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg pl-10 pr-10 py-2 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all shadow-sm" id="heroSearchInput" placeholder="Search mobiles, laptops, brands (e.g. iPhone 17, ₹30k)..." type="text">
+<button class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary text-[20px]">tune</button>
+</div>
+</div>
+</header>
+<!-- ==================== SIDE NAVIGATION DRAWER (Slide-over) ==================== -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="drawerOverlay">
+<aside class="bg-surface-container-lowest text-primary font-headline-sm text-headline-sm h-full w-80 max-w-[85vw] flex flex-col border-r border-outline-variant/40 shadow-xl fixed inset-y-0 left-0 p-space-md justify-between">
+<div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">ApexTech</span>
+</div>
+<button class="p-1 rounded-lg text-outline hover:bg-surface-container" id="drawerCloseBtn">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="mt-4 font-headline-sm text-headline-sm text-on-surface mb-3 px-2">ApexTech Categories</div>
+<nav class="space-y-1.5">
+<a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-semibold" href="#">
+<span class="material-symbols-outlined text-[22px]">smartphone</span>
+<span class="font-label-lg text-label-lg">Smartphones</span>
+</a>
+<a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+<span class="font-label-lg text-label-lg">Laptops</span>
+</a>
+<a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">compare_arrows</span>
+<span class="font-label-lg text-label-lg">Compare</span>
+</a>
+<a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">local_offer</span>
+<span class="font-label-lg text-label-lg">Deals</span>
+</a>
+<a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">rate_review</span>
+<span class="font-label-lg text-label-lg">Reviews</span>
+</a>
+</nav>
+</div>
+<div class="pt-4 border-t border-outline-variant/30 text-outline text-xs">
+<p class="font-label-mono text-label-mono text-on-surface-variant">ApexTech Precision Metric Engine</p>
+<p class="mt-1">v2.4.0 • Updated Lab Benchmarks</p>
+</div>
+</aside>
+</div>
+<!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-8 mt-3">
+<!-- ==================== 2. HERO SECTION ==================== -->
+<section class="relative rounded-2xl overflow-hidden bg-gradient-to-b from-surface-container to-surface border border-outline-variant/40 p-5 md:p-10 shadow-sm">
+<div class="relative z-10 max-w-2xl">
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest/80 border border-outline-variant/40 rounded-full px-3 py-1 mb-3 text-primary font-label-mono text-label-mono shadow-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+          2025 Benchmark Tests Live
+        </div>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight">
+          Find the Right Tech for You
+        </h1>
+<p class="mt-3 font-body-md text-body-md text-on-surface-variant max-w-xl">
+          Compare mobiles and laptops, explore specifications, read reviews, and find the best device for your needs.
+        </p>
+<!-- Dual Prominent CTAs -->
+<div class="mt-6 flex flex-wrap gap-3">
+<button class="flex items-center justify-center gap-2 bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg px-5 py-3 rounded-lg shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+<span>Explore Mobiles</span>
+</button>
+<button class="flex items-center justify-center gap-2 bg-surface-container-lowest hover:bg-surface-container border border-outline-variant text-on-surface font-label-lg text-label-lg px-5 py-3 rounded-lg shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">laptop_mac</span>
+<span>Explore Laptops</span>
+</button>
+</div>
+<!-- Interactive Quick Search Dropdown Preview (Trending & Recent) -->
+<div class="mt-6 bg-surface-container-lowest/90 backdrop-blur border border-outline-variant/40 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between text-outline text-xs pb-2 border-b border-outline-variant/20 mb-2">
+<span class="font-label-mono text-label-mono uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">trending_up</span> Trending Searches
+            </span>
+<span class="text-primary font-medium text-xs cursor-pointer hover:underline">Clear History</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low hover:bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface border border-outline-variant/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px] text-outline">history</span>
+              iPhone 16 Pro
+            </a>
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low hover:bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface border border-outline-variant/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px] text-outline">bolt</span>
+              Snapdragon 8 Gen 3
+            </a>
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low hover:bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface border border-outline-variant/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px] text-outline">laptop</span>
+              Best Laptop under ₹60,000
+            </a>
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low hover:bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface border border-outline-variant/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-[14px] text-outline">verified</span>
+              M3 MacBook Air
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 3. QUICK CATEGORIES GRID ==================== -->
+<section>
+<div class="flex items-center justify-between mb-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Explore Categories</h2>
+<span class="font-label-mono text-label-mono text-outline">5 Primary Hubs</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+<!-- Cat 1: Smartphones -->
+<a class="group bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant/50 rounded-xl p-3.5 flex flex-col justify-between transition-all duration-150 hover:shadow-md hover:border-primary-container" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">smartphone</span>
+</div>
+<div class="mt-3">
+<div class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+              Smartphones
+              <span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Latest flagships &amp; budget kings</p>
+</div>
+</a>
+<!-- Cat 2: Laptops -->
+<a class="group bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant/50 rounded-xl p-3.5 flex flex-col justify-between transition-all duration-150 hover:shadow-md hover:border-primary-container" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">laptop_mac</span>
+</div>
+<div class="mt-3">
+<div class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+              Laptops
+              <span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Ultrabooks &amp; gaming rigs</p>
+</div>
+</a>
+<!-- Cat 3: Compare -->
+<a class="group bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant/50 rounded-xl p-3.5 flex flex-col justify-between transition-all duration-150 hover:shadow-md hover:border-primary-container" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">compare_arrows</span>
+</div>
+<div class="mt-3">
+<div class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+              Compare
+              <span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Side-by-side spec showdown</p>
+</div>
+</a>
+<!-- Cat 4: Deals -->
+<a class="group bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant/50 rounded-xl p-3.5 flex flex-col justify-between transition-all duration-150 hover:shadow-md hover:border-primary-container" href="#">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/15 flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">local_offer</span>
+</div>
+<div class="mt-3">
+<div class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+              Deals
+              <span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Live drops &amp; bank discounts</p>
+</div>
+</a>
+<!-- Cat 5: Reviews -->
+<a class="group col-span-2 md:col-span-1 bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant/50 rounded-xl p-3.5 flex flex-col justify-between transition-all duration-150 hover:shadow-md hover:border-primary-container" href="#">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/15 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">rate_review</span>
+</div>
+<div class="mt-3">
+<div class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+              Reviews
+              <span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">In-depth lab scores &amp; tests</p>
+</div>
+</a>
+</div>
+</section>
+<!-- ==================== 4. QUICK FILTER CHIPS BAR ==================== -->
+<section class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container border border-outline text-on-surface rounded-lg font-label-md text-label-md shrink-0 shadow-xs hover:border-primary-container">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter (3)</span>
+</button>
+<button class="px-3.5 py-1.5 bg-primary-container text-on-primary rounded-full font-label-md text-label-md shrink-0 shadow-xs font-semibold">
+        All
+      </button>
+<button class="px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 text-on-surface rounded-full font-label-md text-label-md shrink-0 hover:bg-surface-container-low transition-colors">
+        Under ₹30,000
+      </button>
+<button class="px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 text-on-surface rounded-full font-label-md text-label-md shrink-0 hover:bg-surface-container-low transition-colors">
+        5G Phones
+      </button>
+<button class="px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 text-on-surface rounded-full font-label-md text-label-md shrink-0 hover:bg-surface-container-low transition-colors">
+        Gaming Laptops
+      </button>
+<button class="px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 text-on-surface rounded-full font-label-md text-label-md shrink-0 hover:bg-surface-container-low transition-colors">
+        Battery Monsters (5000mAh+)
+      </button>
+<button class="px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 text-on-surface rounded-full font-label-md text-label-md shrink-0 hover:bg-surface-container-low transition-colors">
+        Thin &amp; Light
+      </button>
+</section>
+<!-- ==================== 5. PRODUCT DISCOVERY — 'Explore Latest Devices' ==================== -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Explore Latest Devices</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lab tested specs, benchmark ratings and real-time market pricing.</p>
+</div>
+<a class="font-label-lg text-label-lg text-primary hover:underline flex items-center gap-1 shrink-0" href="#">
+          View All <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+<!-- 2x2 on mobile, 4 columns on large screens -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- CARD 1: Samsung Galaxy S25 Ultra -->
+<article class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden hover:border-primary-container hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<!-- Image Bay -->
+<div class="relative bg-surface-container-low h-48 flex items-center justify-center p-3">
+<span class="absolute top-2.5 right-2.5 bg-tertiary text-on-tertiary text-[11px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                7% OFF
+              </span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 left-2.5 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+<img class="h-36 object-contain mix-blend-multiply" data-alt="Sleek titanium smartphone with quad camera lenses resting on a minimalist slate platform with crisp studio lighting, reflections, high-tech modern aesthetic, clean white background, high-end consumer hardware photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMchmRgfFN5WqrQu-ruevX_GY_AKen994nF2l6pgCwFzwwkX37cZrjYhJWdA3AcNS1qB7lAWscAtu6CLjEu40aLeQd7ij5zI7KQTGAoXcSzMb1EoK5lKnlb5IG0oTL9ar7CLYi6VKiK4xJOohk9UjKeduyxacPQd8qFZe6vhOt187l4tedEZke3MRW21CUvkJqYr84WUnk89IMJ-PN5m7LFTNWUbnvVts-UqpMbtf1DjgED6YetaLY_w">
+</div>
+<!-- Content Bay -->
+<div class="p-4">
+<!-- Rating Pill -->
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="bg-tertiary text-on-tertiary font-bold text-[11px] px-1.5 py-0.2 rounded flex items-center gap-0.5">
+                  ★ 4.8
+                </span>
+<span class="font-body-sm text-body-sm text-outline">(2,410 reviews)</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1 font-bold">
+                Samsung Galaxy S25 Ultra
+              </h3>
+<!-- Pricing Hierarchy -->
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹1,24,999</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,34,999</span>
+</div>
+<!-- Specs Pills (Monospace) -->
+<div class="mt-3 flex flex-wrap gap-1.5">
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">6.8" Dyn AMOLED 2X</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">SD 8 Elite</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">200MP Quad</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">5000mAh 45W</span>
+</div>
+</div>
+</div>
+<!-- Card CTAs -->
+<div class="p-4 pt-0 flex gap-2">
+<button class="flex-1 py-2 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+              Compare
+            </button>
+<button class="flex-1 py-2 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold transition-colors">
+              View Details
+            </button>
+</div>
+</article>
+<!-- CARD 2: Apple MacBook Air M3 (15") -->
+<article class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden hover:border-primary-container hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<!-- Image Bay -->
+<div class="relative bg-surface-container-low h-48 flex items-center justify-center p-3">
+<span class="absolute top-2.5 right-2.5 bg-primary-container text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                Staff Pick
+              </span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 left-2.5 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+<img class="h-36 object-contain mix-blend-multiply" data-alt="Ultra-slim midnight aluminum laptop open at 90-degree angle showing crisp retina display with modern technical wallpaper on a minimal white tech desk with sharp clean light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJIoUDXcd4oJ4IFXEoGf6qlylsjyaw-R7AV2fVmb9hgDJWErgLRUhxXa2Iv0tiIQMiNpl5lGzLmeFADTrzFkHXcdkz-yxtf3O5_iaX4D6L74C8DUAIpwxMgcBnm_Re7zF1fFKSAsI_bAXEJ8KObf5tSYFS5AD9vdKCl2Sacep_v-QTsMyftw80GT5aZxV6iS23O-u2sJzD12_hfS-qW8Oodbz1lChZL-EaJQE4rsdWym_yiUOxCIPseg">
+</div>
+<!-- Content Bay -->
+<div class="p-4">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="bg-tertiary text-on-tertiary font-bold text-[11px] px-1.5 py-0.2 rounded flex items-center gap-0.5">
+                  ★ 4.9
+                </span>
+<span class="font-body-sm text-body-sm text-outline">(1,840 reviews)</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1 font-bold">
+                Apple MacBook Air M3 (15")
+              </h3>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹1,29,900</span>
+<span class="font-label-mono text-label-mono text-tertiary font-semibold">Free Delivery</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5">
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Apple M3 chip</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">16GB Unified RAM</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">512GB SSD</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">18h Battery</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">1.51 kg</span>
+</div>
+</div>
+</div>
+<div class="p-4 pt-0 flex gap-2">
+<button class="flex-1 py-2 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+              Compare
+            </button>
+<button class="flex-1 py-2 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold transition-colors">
+              View Details
+            </button>
+</div>
+</article>
+<!-- CARD 3: OnePlus Nord 4 5G -->
+<article class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden hover:border-primary-container hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="relative bg-surface-container-low h-48 flex items-center justify-center p-3">
+<span class="absolute top-2.5 right-2.5 bg-tertiary text-on-tertiary text-[11px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                9% OFF
+              </span>
+<span class="absolute top-2.5 left-2.5 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded-md">
+                Best Value Under ₹30k
+              </span>
+<img class="h-36 object-contain mix-blend-multiply" data-alt="Metallic silver unibody smartphone displayed vertically with ambient cyan studio light casting soft shadows, minimalist technology backdrop, premium product aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpn2Cq4jAoIXhEc7byf1B-_ZAQB-cybH7oomI091LnRPRpTs4MkV_Hn7SempRQX7od5eSyz_ZpudooyRcNUbejTN4Jo0fpCimmq_JC3cc61T-9DFJn-evaY3AwW2-fPhjFYA-UkZ4pUukm-5ri8MDAINmajFNNPAmxFXLJXdCOk7H002Q-t5NGStsaWM83sECS9pQXwC0bZt2P5-otCy4LeESigkh8RIl1ExD9YRj-xsle7lWwa3TsVQ">
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="bg-tertiary text-on-tertiary font-bold text-[11px] px-1.5 py-0.2 rounded flex items-center gap-0.5">
+                  ★ 4.5
+                </span>
+<span class="font-body-sm text-body-sm text-outline">(5,120 reviews)</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1 font-bold">
+                OnePlus Nord 4 5G
+              </h3>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹29,999</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹32,999</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5">
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">SD 7+ Gen 3</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">5500 mAh</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">100W SuperVOOC</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">120Hz OLED</span>
+</div>
+</div>
+</div>
+<div class="p-4 pt-0 flex gap-2">
+<button class="flex-1 py-2 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+              Compare
+            </button>
+<button class="flex-1 py-2 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold transition-colors">
+              View Details
+            </button>
+</div>
+</article>
+<!-- CARD 4: ASUS ROG Zephyrus G16 -->
+<article class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden hover:border-primary-container hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="relative bg-surface-container-low h-48 flex items-center justify-center p-3">
+<span class="absolute top-2.5 right-2.5 bg-surface-dim text-on-surface text-[11px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                RTX 4070
+              </span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 left-2.5 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+<img class="h-36 object-contain mix-blend-multiply" data-alt="Matte dark grey gaming laptop showing illuminated slash lighting lid, thin bezel OLED screen on dark graphite surface with soft blue undertones, engineering excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaYEQPmU-aovu-UucPJ2Ia7kZcX4ckNaCxXoRK8RnARq4vVd2KPEIACG2IbBUIoSR6-av4mrFmgItxFA4z_WO-P5y_eMWLZyGmXFD81W5LYcDEfsbJa4rpQGy8BAN8p-TKIPQrTmDjM8TGJQ9D09DuSH-YcCx8bCQ4Nsb8VHg0KXWSFMjcfc5GtqgQtr_fkSw-8dU-ddsye4-fDvc6i5MeLxDw7cg0bNCHLC3zSDoXO7U-rVunJLB0uQ">
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="bg-tertiary text-on-tertiary font-bold text-[11px] px-1.5 py-0.2 rounded flex items-center gap-0.5">
+                  ★ 4.7
+                </span>
+<span class="font-body-sm text-body-sm text-outline">(890 reviews)</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1 font-bold">
+                ASUS ROG Zephyrus G16
+              </h3>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹1,69,990</span>
+<span class="font-label-mono text-label-mono text-secondary font-medium">Bank Offer: ₹5k Off</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5">
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Intel Core Ultra 9</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">RTX 4070 8GB</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">OLED 240Hz</span>
+<span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">32GB RAM</span>
+</div>
+</div>
+</div>
+<div class="p-4 pt-0 flex gap-2">
+<button class="flex-1 py-2 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+              Compare
+            </button>
+<button class="flex-1 py-2 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold transition-colors">
+              View Details
+            </button>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================== 6. QUICK COMPARISON TEASER ==================== -->
+<section class="bg-surface-container-low border border-outline-variant/60 rounded-2xl p-4 md:p-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+<div>
+<span class="font-label-mono text-label-mono text-primary font-bold uppercase tracking-wider">Side-By-Side Spec Showdown</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Comparison: Galaxy S25 Ultra vs iPhone 16 Pro</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lab Verified Benchmarks</span>
+</div>
+</div>
+<!-- Comparison Matrix View -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Device 1: S25 Ultra -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 shadow-xs">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<div>
+<span class="text-xs font-semibold text-primary">Contender A</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Galaxy S25 Ultra</h3>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹1,24,999</span>
+</div>
+<div class="mt-3 space-y-2.5 text-sm">
+<div class="flex items-center justify-between py-1 bg-surface-container-low/70 px-2 rounded">
+<span class="text-on-surface-variant font-medium">Display Quality</span>
+<span class="font-bold text-tertiary flex items-center gap-1">
+                Samsung <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-low/70 px-2 rounded">
+<span class="text-on-surface-variant font-medium">Camera Telephoto Zoom</span>
+<span class="font-bold text-tertiary flex items-center gap-1">
+                Samsung 5x/100x <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+<div class="flex items-center justify-between py-1 px-2">
+<span class="text-on-surface-variant font-medium">Performance Benchmark</span>
+<span class="text-outline text-xs">Snapdragon 8 Elite (Geekbench: 9,820)</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-low/70 px-2 rounded">
+<span class="text-on-surface-variant font-medium">Battery Endurance</span>
+<span class="font-bold text-tertiary flex items-center gap-1">
+                Samsung 14h 22m <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Device 2: iPhone 16 Pro -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 shadow-xs">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<div>
+<span class="text-xs font-semibold text-secondary">Contender B</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">iPhone 16 Pro</h3>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹1,19,900</span>
+</div>
+<div class="mt-3 space-y-2.5 text-sm">
+<div class="flex items-center justify-between py-1 px-2">
+<span class="text-on-surface-variant font-medium">Display Quality</span>
+<span class="text-outline text-xs">Super Retina XDR 120Hz</span>
+</div>
+<div class="flex items-center justify-between py-1 px-2">
+<span class="text-on-surface-variant font-medium">Camera Telephoto Zoom</span>
+<span class="text-outline text-xs">5x Optical Tetraprism</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-low/70 px-2 rounded">
+<span class="text-on-surface-variant font-medium">Performance Benchmark</span>
+<span class="font-bold text-tertiary flex items-center gap-1">
+                Apple A18 Pro <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+<div class="flex items-center justify-between py-1 px-2">
+<span class="text-on-surface-variant font-medium">Battery Endurance</span>
+<span class="text-outline text-xs">12h 45m Web Browsing</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 text-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-on-surface text-surface font-label-lg text-label-lg px-6 py-2.5 rounded-lg shadow-sm hover:bg-black transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+          Launch Full 4-Device Comparison Table
+        </button>
+</div>
+</section>
+<!-- ==================== 7. DEALS OF THE DAY (PRICE HIERARCHY) ==================== -->
+<section>
+<div class="bg-gradient-to-r from-primary-fixed to-secondary-fixed/40 p-4 rounded-xl border border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Deals of the Day</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verified price cuts across Amazon, Flipkart &amp; direct brands</p>
+</div>
+</div>
+<!-- Flash Countdown Timer Banner -->
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-outline-variant/40 shadow-xs self-start sm:self-auto font-label-mono text-label-mono font-bold text-error">
+<span class="material-symbols-outlined text-[18px] animate-spin">alarm</span>
+<span>Deals refresh in 04h : 28m : 12s</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Deal Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 flex gap-3 items-center hover:border-primary-container transition-all">
+<div class="w-20 h-20 rounded-lg bg-surface-container-low shrink-0 flex items-center justify-center p-1.5">
+<img class="max-h-full object-contain mix-blend-multiply" data-alt="Slim obsidian black lightweight laptop slightly angled on smooth gradient surface, showcasing razor thin profile, pristine studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLdzAVnXJBBI6OQDMJ02RNyTwnPAlsBS3db2vtk4s5xoRrW19dmHPtkI0vd2Xu6DYI0zA1T4EYhucvKtZe9nEsdRSkZGnC-AeFyVuI0746QjNPjxcyEehd3c39QWXRZymdSuc5Gvfdfm43jU0SIhfnqHNGBFR0JCXPP9yBMY300DWRiN0-OErQ-5iB-wGPUMhQblWp9YGPM49Jzg8_Qww5P29AhP6JNnTgnEX9sFkyuVlHxgitQ1auSw">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.2 rounded">Save ₹12,000</span>
+<span class="font-label-mono text-label-mono text-outline text-[11px]">Amazon</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface truncate mt-1">Dell XPS 13 Plus</h4>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹1,14,990</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,26,990</span>
+</div>
+</div>
+</div>
+<!-- Deal Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 flex gap-3 items-center hover:border-primary-container transition-all">
+<div class="w-20 h-20 rounded-lg bg-surface-container-low shrink-0 flex items-center justify-center p-1.5">
+<img class="max-h-full object-contain mix-blend-multiply" data-alt="Modern olive green android flagship mobile phone laying flat on light surface showing rear camera rings and edge display reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtKXeiSR0Tu0OXAutmLvAKhOgWInXyp2sZiRgxQUXojoebdpYageEpg_-P2n4xV3kywBZL2x2U6-d_eRv_dlfBsGc1kgcQjRHOWoysmJt4V6RU086qHXlFBbeN77vS_UDYw2G07FS7lLwrm415lMQq7wTGZJgZRiPhqlKkAaKpxy6ASTL_t9hvw8WTDlJrbXEo2l-H5iB8n9_O6LoHHx6wQu6K4gv2UTkcmB-Dcy2PgNPcKZBrm3NOsQ">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.2 rounded">28% OFF</span>
+<span class="font-label-mono text-label-mono text-outline text-[11px]">Flipkart</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface truncate mt-1">Pixel 9 (128GB)</h4>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹57,999</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹79,999</span>
+</div>
+</div>
+</div>
+<!-- Deal Item 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 flex gap-3 items-center hover:border-primary-container transition-all">
+<div class="w-20 h-20 rounded-lg bg-surface-container-low shrink-0 flex items-center justify-center p-1.5">
+<img class="max-h-full object-contain mix-blend-multiply" data-alt="Dark gray sleek gaming tablet with stylus pencil on a minimalist clean desk background with high tech ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxoy37ipq2hlUfmJZZYKe4MigqSF-NOniup6sTo4u5Lz7-0a8lPBPA_f3JnsEv-Np-gxkh_IyLzrzQwW7eWO3dRSYb4OZb6n94vLR5pykFLN2-QXNw8EWV7khJvv4fcMAPli9eMFFGvQ9IzFMkCXAFseY07CYGm2dhcvqF_CO4tEPmvWHe5UwmykHesthZ9XCYr3TRNzzuqpI9UuJDRiz_SwFkQl8Iva8kyzCGglUgyPGOS-JGNr77HA">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.2 rounded">18% OFF</span>
+<span class="font-label-mono text-label-mono text-outline text-[11px]">Official Store</span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface truncate mt-1">iPad Air M2 (11")</h4>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹48,900</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹59,900</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 8. EXPERT REVIEWS & RATINGS MATRIX ==================== -->
+<section class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-5 md:p-7 shadow-xs">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-outline-variant/30">
+<div>
+<span class="font-label-mono text-label-mono text-primary font-bold uppercase">ApexTech Hardware Lab Benchmarks</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Expert Score Breakdown: S25 Ultra</h2>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-12 h-12 rounded-xl bg-tertiary text-on-tertiary font-headline-md text-headline-md flex items-center justify-center font-extrabold shadow-sm">
+            9.4
+          </div>
+<div class="text-xs">
+<div class="font-bold text-on-surface">Overall Lab Score</div>
+<div class="text-outline">Based on 124 benchmark runs</div>
+</div>
+</div>
+</div>
+<!-- Score Breakdown Sliders -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-5">
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex justify-between items-center mb-1">
+<span class="font-title-md text-title-md text-on-surface">Display</span>
+<span class="font-label-mono text-label-mono font-bold text-primary">9.6 / 10</span>
+</div>
+<div class="w-full bg-outline-variant/40 h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 96%"></div>
+</div>
+<span class="text-[11px] text-outline mt-1 block">Peak 2,600 nits antiriflective</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex justify-between items-center mb-1">
+<span class="font-title-md text-title-md text-on-surface">Battery</span>
+<span class="font-label-mono text-label-mono font-bold text-primary">9.2 / 10</span>
+</div>
+<div class="w-full bg-outline-variant/40 h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 92%"></div>
+</div>
+<span class="text-[11px] text-outline mt-1 block">14h 20m active screen-on</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex justify-between items-center mb-1">
+<span class="font-title-md text-title-md text-on-surface">Performance</span>
+<span class="font-label-mono text-label-mono font-bold text-primary">9.8 / 10</span>
+</div>
+<div class="w-full bg-outline-variant/40 h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 98%"></div>
+</div>
+<span class="text-[11px] text-outline mt-1 block">Zero thermal throttling</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex justify-between items-center mb-1">
+<span class="font-title-md text-title-md text-on-surface">Value</span>
+<span class="font-label-mono text-label-mono font-bold text-secondary">8.9 / 10</span>
+</div>
+<div class="w-full bg-outline-variant/40 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 89%"></div>
+</div>
+<span class="text-[11px] text-outline mt-1 block">Premium pricing tier</span>
+</div>
+</div>
+<!-- Pros and Cons Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Pros -->
+<div class="border border-tertiary-container/30 bg-tertiary-container/5 rounded-xl p-4">
+<h4 class="font-title-md text-title-md font-bold text-tertiary flex items-center gap-1.5 mb-2.5">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+            The Pros
+          </h4>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2">
+<span class="text-tertiary font-bold">✓</span>
+              Industry-best anti-reflective display coating with stellar outdoor visibility
+            </li>
+<li class="flex items-start gap-2">
+<span class="text-tertiary font-bold">✓</span>
+              Snapdragon 8 Elite yields exceptional sustained frame rates in AAA mobile titles
+            </li>
+<li class="flex items-start gap-2">
+<span class="text-tertiary font-bold">✓</span>
+              Versatile 200MP sensor with updated portrait clarity and faster shutter speed
+            </li>
+</ul>
+</div>
+<!-- Cons -->
+<div class="border border-error-container bg-error-container/10 rounded-xl p-4">
+<h4 class="font-title-md text-title-md font-bold text-error flex items-center gap-1.5 mb-2.5">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+            The Cons
+          </h4>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2">
+<span class="text-error font-bold">✕</span>
+              Wired charging remains capped at 45W while rivals push 100W+
+            </li>
+<li class="flex items-start gap-2">
+<span class="text-error font-bold">✕</span>
+              Substantial form-factor weight makes one-handed usage fatiguing
+            </li>
+<li class="flex items-start gap-2">
+<span class="text-error font-bold">✕</span>
+              Premium flagship price tag of ₹1,24,999 limits accessibility
+            </li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- ==================== 9. COMPREHENSIVE FOOTER ==================== -->
+<footer class="mt-12 bg-surface-container-low text-primary w-full border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-8 md:py-12">
+<!-- Top row with brand and newsletter -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-outline-variant/20">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface">ApexTech</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-1">
+            Authoritative device evaluations, synthetic lab tests, and real-time market metrics for laptops and smartphones.
+          </p>
+</div>
+<div class="w-full md:w-auto flex flex-col sm:flex-row gap-2">
+<input class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg px-3.5 py-2 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container" placeholder="Enter email for weekly spec drops..." type="email">
+<button class="bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg font-semibold transition-colors">
+            Subscribe
+          </button>
+</div>
+</div>
+<!-- Links Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 py-8">
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface mb-3">Hardware Hubs</h5>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Smartphones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Laptops</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ultrabooks</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Gaming Rigs</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface mb-3">Tools &amp; Benchmarks</h5>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Comparisons</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Price Tracker</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Battery Life Index</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">GPU Benchmark Scores</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface mb-3">Editorial &amp; Policy</h5>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Editorial Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Testing Methodology</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Affiliate Disclosures</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Terms</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface mb-3">Company &amp; Support</h5>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Support</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press Inquiries</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Engineers</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright text exact match from Shared Components JSON -->
+<div class="pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center gap-3">
+<p class="font-body-sm text-body-sm text-outline text-center sm:text-left">
+          © 2024 ApexTech Ltd. All rights reserved. High-performance device evaluations and marketplace metrics.
+        </p>
+<div class="flex items-center gap-3 text-outline">
+<a aria-label="Twitter" class="hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</a>
+<a aria-label="Feed" class="hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">rss_feed</span>
+</a>
+<a aria-label="Security" class="hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- ==================== MOBILE FLOATING BOTTOM NAVIGATION DOCK ==================== -->
+<!-- Shared Component Anchor: BottomNavBar (Active: Explore) -->
+<nav class="bg-surface-container-lowest/95 backdrop-blur-md text-primary font-headline-sm text-headline-sm docked full-width bottom-0 md:hidden border-t border-outline-variant/30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] fixed bottom-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs">
+<!-- Tab 1: Explore (Active State according to active intent rule) -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</a>
+<!-- Tab 2: Compare with badge -->
+<a class="relative flex flex-col items-center justify-center text-on-surface-variant py-1 active:scale-90 transition-transform hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]">compare_arrows</span>
+<span class="font-label-md text-label-md">Compare</span>
+<span class="absolute 0 top-0.5 right-2 bg-secondary text-on-secondary text-[9px] font-bold px-1 rounded-full">2</span>
+</a>
+<!-- Tab 3: Deals -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 active:scale-90 transition-transform hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]">sell</span>
+<span class="font-label-md text-label-md">Deals</span>
+</a>
+<!-- Tab 4: Wishlist -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 active:scale-90 transition-transform hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]">favorite_border</span>
+<span class="font-label-md text-label-md">Wishlist</span>
+</a>
+<!-- Tab 5: Account -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 active:scale-90 transition-transform hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]">person_outline</span>
+<span class="font-label-md text-label-md">Account</span>
+</a>
+</nav>
+<!-- ==================== MICRO INTERACTIONS SCRIPT ==================== -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Drawer Toggle logic
+      const drawerToggleBtn = document.getElementById('drawerToggleBtn');
+      const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+      const drawerOverlay = document.getElementById('drawerOverlay');
+
+      if (drawerToggleBtn && drawerOverlay && drawerCloseBtn) {
+        drawerToggleBtn.addEventListener('click', () => {
+          drawerOverlay.classList.remove('hidden');
+        });
+
+        drawerCloseBtn.addEventListener('click', () => {
+          drawerOverlay.classList.add('hidden');
+        });
+
+        drawerOverlay.addEventListener('click', (e) => {
+          if (e.target === drawerOverlay) {
+            drawerOverlay.classList.add('hidden');
+          }
+        });
+      }
+
+      // Search Quick Focus enhancement
+      const searchInput = document.getElementById('heroSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('focus', () => {
+          searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+          searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+      }
+    });
+  </script>
+</body></html>

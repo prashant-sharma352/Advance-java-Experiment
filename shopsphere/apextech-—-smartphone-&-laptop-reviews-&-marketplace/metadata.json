@@ -1,0 +1,6 @@
+{
+  "name": "ApexTech — Smartphone & Laptop Reviews & Marketplace",
+  "description": "Authoritative device evaluations, synthetic hardware lab benchmarks, price tracking, and marketplace for smartphones and laptops.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
